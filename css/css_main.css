@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F6F3;
+}
+.serif-font {
+    font-family: 'Playfair Display', serif;
+}
+.burgundy {
+    background-color: #4A1F1F;
+}
+.burgundy-text {
+    color: #4A1F1F;
+}
+.palm-tan {
+    color: #D4A574;
+}
+.shadow-soft {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.shadow-elegant {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+.group:hover .reveal-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Custom Checkbox */
+.custom-checkbox input:checked + div {
+    background-color: #4A1F1F;
+    border-color: #4A1F1F;
+}
+.custom-checkbox input:checked + div svg {
+    display: block;
+}
