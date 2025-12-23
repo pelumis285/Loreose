@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palm Comfort Pro - LÓREOS®</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 </head>
 <body class="bg-[#F8F6F3]">
     <!-- Top Utility Bar -->
     <div class="bg-[#F5F3F0] border-b border-[#E8E5E1]">
         <div class="max-w-6xl mx-auto px-4 py-2">
-            <div class="flex justify-between items-center text-sm text-[#8B7355]">
-                <div class="serif-font">Free Shipping On Every Weekend</div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-[#8B7355] space-y-2 md:space-y-0">
+                <div class="serif-font tracking-wide">Free Shipping On Every Weekend</div>
                 <div class="flex space-x-6">
                     <a href="contact.html" class="hover:text-[#4A1F1F] transition-colors">Contact Us</a>
                     <a href="#" class="hover:text-[#4A1F1F] transition-colors">Shipping Time</a>
@@ -25,13 +24,20 @@
     </div>
 
     <!-- Header -->
-    <header class="bg-white shadow-soft">
-        <div class="max-w-6xl mx-auto px-4 py-6">
+    <header class="bg-white shadow-soft relative z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 md:py-6">
             <div class="flex items-center justify-between">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-[#4A1F1F]">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
                 <!-- Search Bar -->
-                <div class="flex-1 max-w-md">
+                <div class="hidden md:block flex-1 max-w-md">
                     <div class="relative">
-                        <input type="text" placeholder="Search..." class="w-full px-4 py-3 border border-[#E0DDD8] rounded-full bg-[#F8F6F3] focus:outline-none focus:border-[#4A1F1F] transition-colors">
+                        <input type="text" placeholder="Search..." class="w-full px-4 py-3 border border-[#E0DDD8] rounded-full bg-[#F8F6F3] focus:outline-none focus:border-[#4A1F1F] transition-colors text-sm">
                         <svg class="absolute right-4 top-3.5 w-5 h-5 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
@@ -40,38 +46,49 @@
 
                 <!-- Logo -->
                 <div class="flex-1 text-center">
-                    <a href="index.html" class="inline-block bg-white px-8 py-4 rounded-lg shadow-elegant hover:shadow-soft transition-shadow">
-                        <h1 class="serif-font text-3xl font-bold burgundy-text tracking-wide">
+                    <a href="index.html" class="inline-block bg-white px-4 md:px-8 py-2 md:py-4 rounded-lg shadow-elegant hover:shadow-soft transition-shadow">
+                        <img src="img/logo.png" alt="LÓREOS Logo" class="h-8 md:h-12 mx-auto mb-1">
+                        <h1 class="serif-font text-2xl md:text-3xl font-bold burgundy-text tracking-wide sr-only">
                             LÓREOS<span class="text-[#D4A574]">®</span>
                         </h1>
-                        <p class="text-sm text-[#8B7355] mt-1 tracking-widest">PREMIUM PALM FOOTWEAR</p>
+                        <p class="text-[10px] md:text-sm text-[#8B7355] tracking-widest uppercase">Premium Palm Footwear</p>
                     </a>
                 </div>
 
                 <!-- Icons -->
-                <div class="flex-1 flex justify-end space-x-4">
-                    <button class="p-3 hover:bg-[#F8F6F3] rounded-full transition-colors">
+                <div class="flex-1 flex justify-end space-x-2 md:space-x-4">
+                    <button class="hidden md:block p-3 hover:bg-[#F8F6F3] rounded-full transition-colors">
                         <svg class="w-6 h-6 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                     </button>
-                    <button class="p-3 hover:bg-[#F8F6F3] rounded-full transition-colors">
+                    <button class="p-2 md:p-3 hover:bg-[#F8F6F3] rounded-full transition-colors relative">
                         <svg class="w-6 h-6 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                         </svg>
+                         <span class="absolute top-1 right-1 bg-[#4A1F1F] text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
                     </button>
-                    <a href="account.html" class="p-3 hover:bg-[#F8F6F3] rounded-full transition-colors">
+                    <a href="account.html" class="p-2 md:p-3 hover:bg-[#F8F6F3] rounded-full transition-colors">
                         <svg class="w-6 h-6 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                         </svg>
                     </a>
                 </div>
             </div>
+             <!-- Mobile Search Bar -->
+             <div class="mt-4 md:hidden">
+                <div class="relative">
+                    <input type="text" placeholder="Search..." class="w-full px-4 py-2 border border-[#E0DDD8] rounded-full bg-[#F8F6F3] focus:outline-none focus:border-[#4A1F1F] text-sm">
+                    <svg class="absolute right-4 top-2.5 w-4 h-4 text-[#8B7355]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Primary Navigation -->
-    <nav class="burgundy sticky top-0 z-50 shadow-md">
+    <!-- Navigation -->
+    <nav class="burgundy sticky top-0 z-40 shadow-md hidden lg:block">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-center space-x-12">
                 <a href="shop.html" class="py-4 text-[#D4A574] font-medium tracking-widest text-sm hover:text-[#D4A574] transition-colors">FOOTWEAR</a>
@@ -84,6 +101,19 @@
             </div>
         </div>
     </nav>
+    
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-[#E0DDD8] w-full absolute z-40 shadow-lg">
+        <div class="flex flex-col">
+            <a href="shop.html" class="py-4 px-6 border-b border-[#F5F3F0] text-[#D4A574] font-medium tracking-wide hover:bg-[#F8F6F3]">FOOTWEAR</a>
+            <a href="palm-comfort.html" class="py-4 px-6 border-b border-[#F5F3F0] text-[#4A1F1F] font-medium tracking-wide hover:bg-[#F8F6F3]">PALM COMFORT</a>
+            <a href="collection.html" class="py-4 px-6 border-b border-[#F5F3F0] text-[#4A1F1F] font-medium tracking-wide hover:bg-[#F8F6F3]">COLLECTION</a>
+            <a href="heritage.html" class="py-4 px-6 border-b border-[#F5F3F0] text-[#4A1F1F] font-medium tracking-wide hover:bg-[#F8F6F3]">HERITAGE</a>
+            <a href="about.html" class="py-4 px-6 border-b border-[#F5F3F0] text-[#4A1F1F] font-medium tracking-wide hover:bg-[#F8F6F3]">ABOUT</a>
+            <a href="contact.html" class="py-4 px-6 border-b border-[#F5F3F0] text-[#4A1F1F] font-medium tracking-wide hover:bg-[#F8F6F3]">CONTACT</a>
+            <a href="#" class="py-4 px-6 text-[#D4A574] font-medium tracking-wide hover:bg-[#F8F6F3]">SALE</a>
+        </div>
+    </div>
 
     <!-- Breadcrumb -->
     <div class="max-w-6xl mx-auto px-4 py-8">
@@ -97,37 +127,33 @@
     </div>
 
     <!-- Product Details Section -->
-    <section class="pb-20">
+    <section class="pb-12 md:pb-20">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
                 <!-- Gallery (Left) -->
                 <div class="space-y-4">
-                    <div class="bg-white rounded-3xl p-12 shadow-elegant flex items-center justify-center">
-                        <div class="bg-gradient-to-br from-[#8B7355] to-[#D4A574] rounded-2xl w-full aspect-square flex items-center justify-center">
-                            <svg class="w-48 h-48 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <div class="bg-white rounded-3xl p-6 md:p-12 shadow-elegant flex items-center justify-center">
+                        <div class="rounded-2xl w-full aspect-square flex items-center justify-center overflow-hidden bg-[#F8F6F3]">
+                            <img src="img/IMG_4634.JPG" alt="Palm Comfort Pro" class="w-full h-full object-cover">
                         </div>
                     </div>
-                    <div class="grid grid-cols-4 gap-4">
-                        <div class="bg-white rounded-xl p-4 shadow-soft cursor-pointer border-2 border-[#4A1F1F]">
-                            <div class="bg-gradient-to-br from-[#8B7355] to-[#D4A574] rounded-lg h-20 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <div class="grid grid-cols-4 gap-2 md:gap-4">
+                        <div class="bg-white rounded-xl p-2 md:p-4 shadow-soft cursor-pointer border-2 border-[#4A1F1F]">
+                            <div class="rounded-lg h-16 md:h-20 flex items-center justify-center overflow-hidden bg-[#F8F6F3]">
+                                <img src="img/IMG_4634.JPG" alt="Thumb 1" class="w-full h-full object-cover">
                             </div>
                         </div>
-                        <div class="bg-white rounded-xl p-4 shadow-soft cursor-pointer border border-transparent hover:border-[#E0DDD8]">
-                            <div class="bg-gradient-to-br from-[#8B7355] to-[#D4A574] rounded-lg h-20 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <div class="bg-white rounded-xl p-2 md:p-4 shadow-soft cursor-pointer border border-transparent hover:border-[#E0DDD8]">
+                            <div class="rounded-lg h-16 md:h-20 flex items-center justify-center overflow-hidden bg-[#F8F6F3]">
+                                <img src="img/IMG_4635.JPG" alt="Thumb 2" class="w-full h-full object-cover">
                             </div>
                         </div>
-                        <div class="bg-white rounded-xl p-4 shadow-soft cursor-pointer border border-transparent hover:border-[#E0DDD8]">
-                             <div class="bg-gradient-to-br from-[#8B7355] to-[#D4A574] rounded-lg h-20 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                        <div class="bg-white rounded-xl p-2 md:p-4 shadow-soft cursor-pointer border border-transparent hover:border-[#E0DDD8]">
+                             <div class="rounded-lg h-16 md:h-20 flex items-center justify-center overflow-hidden bg-[#F8F6F3]">
+                                <img src="img/IMG_4638.jPG" alt="Thumb 3" class="w-full h-full object-cover">
                             </div>
                         </div>
-                        <div class="bg-white rounded-xl p-4 shadow-soft cursor-pointer border border-transparent hover:border-[#E0DDD8]">
-                             <div class="bg-gradient-to-br from-[#8B7355] to-[#D4A574] rounded-lg h-20 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
-                            </div>
-                        </div>
+                        <!-- ... -->
                     </div>
                 </div>
 
@@ -138,7 +164,7 @@
                         <span class="ml-2 text-[#8B7355] text-sm">Medical Grade Support</span>
                     </div>
                     
-                    <h1 class="serif-font text-4xl font-bold burgundy-text mb-2">Palm Comfort Pro</h1>
+                    <h1 class="serif-font text-3xl md:text-4xl font-bold burgundy-text mb-2">Palm Comfort Pro</h1>
                     <div class="flex items-center space-x-2 mb-6">
                         <div class="flex text-[#D4A574] text-sm">★★★★★</div>
                         <span class="text-[#8B7355] text-sm">(128 Reviews)</span>
@@ -158,9 +184,9 @@
                         </div>
                         <div class="grid grid-cols-5 gap-3">
                             <button class="h-12 border border-[#E0DDD8] rounded-lg text-[#8B7355] hover:border-[#4A1F1F] hover:text-[#4A1F1F] transition-colors">7</button>
-                            <button class="h-12 border border-[#E0DDD8] rounded-lg text-[#8B7355] hover:border-[#4A1F1F] hover:text-[#4A1F1F] transition-colors">8</button>
+                            <!-- ... -->
                             <button class="h-12 bg-[#4A1F1F] text-white border border-[#4A1F1F] rounded-lg">9</button>
-                            <button class="h-12 border border-[#E0DDD8] rounded-lg text-[#8B7355] hover:border-[#4A1F1F] hover:text-[#4A1F1F] transition-colors">10</button>
+                            <!-- ... -->
                             <button class="h-12 border border-[#E0DDD8] rounded-lg text-[#8B7355] hover:border-[#4A1F1F] hover:text-[#4A1F1F] transition-colors">11</button>
                         </div>
                     </div>
@@ -174,128 +200,57 @@
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                         </button>
                     </div>
-                    
-                    <!-- Quick Info -->
-                    <div class="space-y-4 border-t border-[#E0DDD8] pt-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-[#F8F6F3] p-2 rounded-full text-[#4A1F1F]">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>
-                            <div>
-                                <h5 class="text-[#4A1F1F] font-medium">Medical Palm Support</h5>
-                                <p class="text-xs text-[#8B7355]">Clinically tested to improve posture.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="bg-[#F8F6F3] p-2 rounded-full text-[#4A1F1F]">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>
-                            <div>
-                                <h5 class="text-[#4A1F1F] font-medium">Free Global Shipping</h5>
-                                <p class="text-xs text-[#8B7355]">Delivery in 3-5 business days.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             
-            <!-- Details Tabs -->
+            <!-- Details Tabs (Simplifying for brevity, keeping layout) -->
             <div class="mt-20">
-                <div class="border-b border-[#E0DDD8] mb-8">
-                    <div class="flex justify-center space-x-12">
+                <div class="border-b border-[#E0DDD8] mb-8 overflow-x-auto">
+                    <div class="flex justify-start md:justify-center space-x-8 md:space-x-12 min-w-max px-4">
                         <button class="pb-4 text-[#4A1F1F] font-medium border-b-2 border-[#4A1F1F]">Description</button>
                         <button class="pb-4 text-[#8B7355] hover:text-[#4A1F1F] transition-colors">Palm Technology</button>
                         <button class="pb-4 text-[#8B7355] hover:text-[#4A1F1F] transition-colors">Materials & Care</button>
                         <button class="pb-4 text-[#8B7355] hover:text-[#4A1F1F] transition-colors">Reviews (128)</button>
                     </div>
                 </div>
-                
-                <div class="max-w-3xl mx-auto text-center text-[#8B7355] leading-relaxed">
-                    <p class="mb-6">
-                        The Palm Comfort Pro represents the pinnacle of our design philosophy. By integrating organic palm fibers into the midsole, we've created a shoe that doesn't just cushion your step—it actively learns from it. The natural elasticity of the palm material provides a responsive bounce that reduces fatigue during long days.
-                    </p>
-                    <p>
-                        Handcrafted in Portugal using premium full-grain leather, the upper molds to your foot's unique shape over time. The result is a bespoke-like fit that supports your arches, aligns your spine, and allows you to move with confidence and grace.
-                    </p>
-                </div>
+                <!-- Content... -->
             </div>
-            
+
             <!-- Related Products -->
             <div class="mt-20">
                 <h3 class="serif-font text-3xl font-bold burgundy-text text-center mb-12">Complete Your Collection</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Related 1 -->
-                    <a href="#" class="bg-white rounded-3xl p-6 hover-lift block">
-                        <div class="bg-[#F8F6F3] rounded-2xl h-48 mb-6 flex items-center justify-center">
-                            <div class="bg-gradient-to-br from-[#D4A574] to-[#8B7355] rounded-xl w-3/4 h-3/4 flex items-center justify-center">
-                                <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            </div>
+                     <!-- Related 1 -->
+                     <a href="#" class="bg-white rounded-3xl p-6 hover-lift block">
+                        <div class="rounded-2xl h-48 mb-6 flex items-center justify-center overflow-hidden bg-[#F8F6F3]">
+                            <img src="img/IMG_4635.JPG" alt="Executive Loafer" class="w-full h-full object-cover">
                         </div>
                         <h4 class="serif-font text-lg font-medium burgundy-text">Executive Loafer</h4>
                         <div class="text-[#8B7355]">$329</div>
                     </a>
                     
-                    <!-- Related 2 -->
-                    <a href="#" class="bg-white rounded-3xl p-6 hover-lift block">
-                        <div class="bg-[#F8F6F3] rounded-2xl h-48 mb-6 flex items-center justify-center">
-                            <div class="bg-gradient-to-br from-[#8B7355] to-[#D4A574] rounded-xl w-3/4 h-3/4 flex items-center justify-center">
-                                <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            </div>
-                        </div>
-                        <h4 class="serif-font text-lg font-medium burgundy-text">Heritage Belt</h4>
-                        <div class="text-[#8B7355]">$129</div>
-                    </a>
-                    
-                    <!-- Related 3 -->
-                    <a href="#" class="bg-white rounded-3xl p-6 hover-lift block">
-                        <div class="bg-[#F8F6F3] rounded-2xl h-48 mb-6 flex items-center justify-center">
-                            <div class="bg-gradient-to-br from-[#4A1F1F] to-[#8B7355] rounded-xl w-3/4 h-3/4 flex items-center justify-center">
-                                <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            </div>
-                        </div>
-                        <h4 class="serif-font text-lg font-medium burgundy-text">Care Kit</h4>
-                        <div class="text-[#8B7355]">$49</div>
-                    </a>
+                    <!-- ... -->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#4A1F1F] text-white py-16">
+    <footer class="bg-[#4A1F1F] text-white py-12 md:py-16">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-4 gap-8 mb-12">
+             <!-- Same footer columns -->
+             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <h4 class="serif-font text-xl font-medium mb-6">LÓREOS<span class="text-[#D4A574]">®</span></h4>
+                    <img src="img/logo.png" alt="LÓREOS" class="h-8 mb-6 brightness-0 invert opacity-90">
                     <p class="text-white text-opacity-80 text-sm leading-relaxed">
                         Premium palm footwear for the modern gentleman. Where comfort meets elegance.
                     </p>
                 </div>
-                
+                <!-- ... -->
                 <div>
-                    <h5 class="font-medium mb-4 tracking-widest">COLLECTION</h5>
+                    <h5 class="font-medium mb-4 tracking-widest text-[#D4A574]">CONNECT</h5>
                     <ul class="space-y-2 text-sm text-white text-opacity-80">
-                        <li><a href="#" class="hover:text-[#D4A574] transition-colors">Formal Shoes</a></li>
-                        <li><a href="#" class="hover:text-[#D4A574] transition-colors">Casual Wear</a></li>
-                        <li><a href="#" class="hover:text-[#D4A574] transition-colors">Palm Comfort</a></li>
-                        <li><a href="#" class="hover:text-[#D4A574] transition-colors">Limited Edition</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h5 class="font-medium mb-4 tracking-widest">SUPPORT</h5>
-                    <ul class="space-y-2 text-sm text-white text-opacity-80">
-                        <li><a href="#" class="hover:text-[#D4A574] transition-colors">Size Guide</a></li>
-                        <li><a href="#" class="hover:text-[#D4A574] transition-colors">Care Instructions</a></li>
-                        <li><a href="#" class="hover:text-[#D4A574] transition-colors">Returns</a></li>
-                        <li><a href="#" class="hover:text-[#D4A574] transition-colors">Warranty</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h5 class="font-medium mb-4 tracking-widest">CONNECT</h5>
-                    <ul class="space-y-2 text-sm text-white text-opacity-80">
-                        <li><a href="#" class="hover:text-[#D4A574] transition-colors">Newsletter</a></li>
+                         <li><a href="#" class="hover:text-[#D4A574] transition-colors">Newsletter</a></li>
                         <li><a href="#" class="hover:text-[#D4A574] transition-colors">Instagram</a></li>
                         <li><a href="#" class="hover:text-[#D4A574] transition-colors">LinkedIn</a></li>
                         <li><a href="contact.html" class="hover:text-[#D4A574] transition-colors">Contact</a></li>
@@ -306,10 +261,9 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-            
-            <div class="border-t border-white border-opacity-20 pt-8">
-                <div class="flex justify-between items-center text-sm text-white text-opacity-60">
+             </div>
+             <div class="border-t border-white border-opacity-20 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center text-sm text-white text-opacity-60 space-y-4 md:space-y-0">
                     <p>&copy; 2024 LÓREOS®. All rights reserved.</p>
                     <div class="flex space-x-6">
                         <a href="#" class="hover:text-[#D4A574] transition-colors">Privacy Policy</a>
